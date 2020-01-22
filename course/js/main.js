@@ -20,6 +20,7 @@ function setList(list) {
     table += '</tbody>';
     document.getElementById("listTable").innerHTML = table;
     getTotal(list);
+    saveListStorage(list)
 }
 
 function formatDesc(desc) {
@@ -135,9 +136,28 @@ function validation() {
     } else {
         return 1;
     }
+}
 
+function deleteList() {
+    if (confirm('Delete this list?')) {
+        list = [];
+        setList(list);
+    }
+}
 
+function saveListStorage(list) {
+    var jsonStr = JSON.stringify(list);
+    localStorage.setItem('list', jsonStr);
+}
+
+function initListStorage() {
+    var testList = localStorage.getItem('list');
+    if (testList) {
+        list = JSON.parse(testList);
+    }
+
+    setList(list);
 }
 
 
-setList(list);
+initListStorage();
