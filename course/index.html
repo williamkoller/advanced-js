@@ -45,10 +45,14 @@
             </div>
             <span id="btnUpdate" style="display: none;">
                 <span id="inputIDUpdate"></span>
-            <button onclick="updateData();" class="btn btn-success">Save</button>
-            <button onclick="resetForm();" class="btn btn-primary">Cancel</button>
+            <button onclick="updateData();" class="btn btn-default">Save</button>
+            <button onclick="resetForm();" class="btn btn-default">Cancel</button>
             </span>
-            <button id="btnAdd" onclick="addData();" class="btn btn-default">Add</button>
+            <span id="btnAdd">
+                <button onclick="addData();" class="btn btn-default">Add</button>
+                <button onclick="resetForm();" class="btn btn-default">Reset</button>
+                <button onclick="deleteList();" class="btn btn-default">Delete list</button>
+            </span>
         </div>
 
         <div id="errors" style="display: none;"></div>
@@ -58,7 +62,7 @@
         </table>
     </div>
 
-    <nav class="navbar navbar-default navbar-fixed-bottom">
+    <nav class="navbar-collapse navbar-default fixed-bottom">
         <div class="container">
             <h4 class="text-center text-success">Total: <span id="totalValue">$ 0,00</span></h4>
         </div>
